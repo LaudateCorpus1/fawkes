@@ -67,9 +67,9 @@ def text_match(text, list_of_topics):
                     # What might be a good way to do that ?
                     # Law of diminishing returns ?
                     scores[topic] += list_of_topics[topic][lem_word]
-            except BaseException:
+            except BaseException as e:
                 print(
-                    "[ERROR] Error In text_match! You should check this. This can be FATAL."
+                    "[ERROR] Error In text_match! You should check this. This can be FATAL.", e
                 )
                 pass
     category = max(scores, key=lambda key: scores[key])
